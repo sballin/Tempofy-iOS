@@ -20,7 +20,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>Spotify Auth</string>
+			<string>com.spotify.simpletrackplayback-auth</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>tempofy-login</string>

@@ -14,15 +14,15 @@
 // Don't forget to add your callback URL's prefix to the URL Types section in the target's Info pane!
 
 #define kClientId "8396a42c4a7c446594de64c19bc6ef87"
-#define kCallbackURL "tempofy-login://callback"
+#define kCallbackURL "tempofy-login://"
 
-#define kTokenSwapServiceURL "http://158.130.174.185:1234/swap"
+#define kTokenSwapServiceURL ""
 // or "http://localhost:1234/swap" with example token swap service
 
 // If you don't provide a token swap service url the login will use implicit grant tokens, which
 // means that your user will need to sign in again every time the token expires.
 
-#define kTokenRefreshServiceURL "http://localhost:1234/refresh"
+#define kTokenRefreshServiceURL ""
 // or "http://localhost:1234/refresh" with example token refresh service
 
 // If you don't provide a token refresh service url, the user will need to sign in again every

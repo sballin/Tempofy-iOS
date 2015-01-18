@@ -58,25 +58,13 @@
 
 @implementation AppDelegate
 
-//@synthesize window = _window;
-
-//-(UIWindow *)window {
-//    if (!_window) {
-//        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//        [self.window setRootViewController:someController];
-//        [self.window makeKeyAndVisible];
-//    }
-//    return _window;
-//}
-
 -(void)enableAudioPlaybackWithSession:(SPTSession *)session {
     NSData *sessionData = [NSKeyedArchiver archivedDataWithRootObject:session];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:sessionData forKey:@kSessionUserDefaultsKey];
     [userDefaults synchronize];
-    // MainViewController *mainViewController = (MainViewController *)self.window.rootViewController;
-
-   //[mainViewController handleNewSession:session];
+    MainViewController *mainViewController = (MainViewController *)self.window.rootViewController;
+    [mainViewController handleNewSession:session];
 }
 
 - (void)openLoginPage {
@@ -157,6 +145,7 @@
     [self.window setRootViewController:viewController];
     [self.window makeKeyAndVisible];
     
+    [self enableAudioPlaybackWithSession:session];
     return YES;
 }
 

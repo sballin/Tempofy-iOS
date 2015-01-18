@@ -61,7 +61,7 @@
 }
 
 @property (nonatomic, strong) IBOutlet GraphView *unfiltered;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *pause;
+@property (nonatomic, strong) IBOutlet UIView *pause;
 @property (nonatomic, strong) AccelerometerFilter *filter;
 @property (nonatomic) int count;
 
@@ -138,7 +138,7 @@
     [self.spinner startAnimating];
     
     [SPTAlbum albumWithURI:[NSURL URLWithString:[self.player.currentTrackMetadata valueForKey:SPTAudioStreamingMetadataAlbumURI]]
-                   session:self.session
+                  session:self.session
                   callback:^(NSError *error, SPTAlbum *album) {
                       
                       NSURL *imageURL = album.largestCover.imageURL;
@@ -171,7 +171,6 @@
 }
 
 -(void)handleNewSession:(SPTSession *)session {
-    
     self.session = session;
     
     if (self.player == nil) {
@@ -186,18 +185,20 @@
             return;
         }
         
-        [SPTRequest requestItemAtURI:[NSURL URLWithString:@"spotify:album:4L1HDyfdGIkACuygktO7T7"]
-                         withSession:session
-                            callback:^(NSError *error, id object) {
-                                
-                                if (error != nil) {
-                                    NSLog(@"*** Album lookup got error %@", error);
-                                    return;
-                                }
-                                
-                                [self.player playTrackProvider:(id <SPTTrackProvider>)object callback:nil];
-                                
-                            }];
+        [self playTrack:session:@"1f8hry0XqvlplWGFNr9NNE"];
+    }];
+}
+
+- (void)playTrack:(SPTSession *)session
+                 :(NSString *)trackName {
+    [SPTRequest requestItemAtURI:[NSURL URLWithString:[NSString stringWithFormat:@"spotify:track:%@", trackName]]
+                     withSession:session
+                        callback:^(NSError *error, id object) {
+                        if (error != nil) {
+                            NSLog(@"Track lookup got error %@", error);
+                            return;
+                        }
+        [self.player playTrackProvider:(id <SPTTrackProvider>)object callback:nil];
     }];
 }
 
@@ -221,7 +222,6 @@
 {
 	[super viewDidLoad];
     
-	pause.possibleTitles = [NSSet setWithObjects:kLocalizedPause, kLocalizedResume, nil];
 	isPaused = NO;
 	useAdaptive = NO;
     
@@ -292,13 +292,11 @@
 	{
 		// If we're paused, then resume and set the title to "Pause"
 		isPaused = NO;
-		pause.title = kLocalizedPause;
 	}
 	else
 	{
 		// If we are not paused, then pause and set the title to "Resume"
 		isPaused = YES;
-		pause.title = kLocalizedResume;
 	}
 	
 	// Inform accessibility clients that the pause/resume button has changed.
