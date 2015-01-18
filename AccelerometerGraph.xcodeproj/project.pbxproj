@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14356D9F1A6B4AEE001D9ED2 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14356D9E1A6B4AEE001D9ED2 /* Spotify.framework */; };
+		14356DA11A6B4D46001D9ED2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14356DA01A6B4D46001D9ED2 /* AVFoundation.framework */; };
+		14356DA31A6B4F63001D9ED2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14356DA21A6B4F63001D9ED2 /* Security.framework */; };
+		14A89FE31A6B861B0017C301 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A89FE21A6B861B0017C301 /* iPhone.storyboard */; };
+		14A89FE51A6B8E7D0017C301 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A89FE41A6B8E7D0017C301 /* CoreMotion.framework */; };
 		188D3E9A0D6D207B0076AE1E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -14,8 +19,6 @@
 		53EECF1A17836AAF009DA96A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 53EECF1717836AAF009DA96A /* Default.png */; };
 		53EECF1B17836AAF009DA96A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53EECF1817836AAF009DA96A /* Default@2x.png */; };
 		53EECF2217836AB9009DA96A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53EECF1C17836AB9009DA96A /* Localizable.strings */; };
-		53EECF2317836AB9009DA96A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EECF1E17836AB9009DA96A /* MainViewController.xib */; };
-		53EECF2417836AB9009DA96A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53EECF2017836AB9009DA96A /* MainWindow.xib */; };
 		53EECF2F17836AD0009DA96A /* AccelerometerFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EECF2817836AD0009DA96A /* AccelerometerFilter.m */; };
 		53EECF3017836AD0009DA96A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EECF2A17836AD0009DA96A /* AppDelegate.m */; };
 		53EECF3117836AD0009DA96A /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EECF2C17836AD0009DA96A /* GraphView.m */; };
@@ -25,7 +28,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		14D8295D0DB6E14B00198EC5 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
+		14356D9D1A6B4A67001D9ED2 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Config.h; path = AccelerometerGraph/Config.h; sourceTree = "<group>"; };
+		14356D9E1A6B4AEE001D9ED2 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		14356DA01A6B4D46001D9ED2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		14356DA21A6B4F63001D9ED2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		14A89FE21A6B861B0017C301 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPhone.storyboard; path = AccelerometerGraph/iPhone.storyboard; sourceTree = "<group>"; };
+		14A89FE41A6B8E7D0017C301 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* AccelerometerGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccelerometerGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,8 +42,6 @@
 		53EECF1717836AAF009DA96A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = AccelerometerGraph/images/Default.png; sourceTree = "<group>"; };
 		53EECF1817836AAF009DA96A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "AccelerometerGraph/images/Default@2x.png"; sourceTree = "<group>"; };
 		53EECF1D17836AB9009DA96A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = AccelerometerGraph/en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		53EECF1F17836AB9009DA96A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = AccelerometerGraph/en.lproj/MainViewController.xib; sourceTree = "<group>"; };
-		53EECF2117836AB9009DA96A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = AccelerometerGraph/en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		53EECF2517836ABE009DA96A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AccelerometerGraph/Info.plist; sourceTree = "<group>"; };
 		53EECF2717836AD0009DA96A /* AccelerometerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccelerometerFilter.h; path = AccelerometerGraph/AccelerometerFilter.h; sourceTree = "<group>"; };
 		53EECF2817836AD0009DA96A /* AccelerometerFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccelerometerFilter.m; path = AccelerometerGraph/AccelerometerFilter.m; sourceTree = "<group>"; };
@@ -55,9 +61,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A89FE51A6B8E7D0017C301 /* CoreMotion.framework in Frameworks */,
+				14356DA31A6B4F63001D9ED2 /* Security.framework in Frameworks */,
+				14356DA11A6B4D46001D9ED2 /* AVFoundation.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				188D3E9A0D6D207B0076AE1E /* CoreGraphics.framework in Frameworks */,
+				14356D9F1A6B4AEE001D9ED2 /* Spotify.framework in Frameworks */,
 				63D21B500F93E74800361BAB /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,7 +86,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				14D8295D0DB6E14B00198EC5 /* ReadMe.txt */,
 				2D500B1D0D5A766B00DBA0E3 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -99,8 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				53EECF1C17836AB9009DA96A /* Localizable.strings */,
-				53EECF1E17836AB9009DA96A /* MainViewController.xib */,
-				53EECF2017836AB9009DA96A /* MainWindow.xib */,
 				53EECF1617836AAF009DA96A /* Default-568h@2x.png */,
 				53EECF1717836AAF009DA96A /* Default.png */,
 				53EECF1817836AAF009DA96A /* Default@2x.png */,
@@ -112,6 +119,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14A89FE41A6B8E7D0017C301 /* CoreMotion.framework */,
+				14356DA21A6B4F63001D9ED2 /* Security.framework */,
+				14356DA01A6B4D46001D9ED2 /* AVFoundation.framework */,
+				14356D9E1A6B4AEE001D9ED2 /* Spotify.framework */,
 				63D21B4F0F93E74800361BAB /* QuartzCore.framework */,
 				1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -125,12 +136,14 @@
 			children = (
 				53EECF2917836AD0009DA96A /* AppDelegate.h */,
 				53EECF2A17836AD0009DA96A /* AppDelegate.m */,
+				14356D9D1A6B4A67001D9ED2 /* Config.h */,
 				53EECF2D17836AD0009DA96A /* MainViewController.h */,
 				53EECF2E17836AD0009DA96A /* MainViewController.m */,
 				53EECF2717836AD0009DA96A /* AccelerometerFilter.h */,
 				53EECF2817836AD0009DA96A /* AccelerometerFilter.m */,
 				53EECF2B17836AD0009DA96A /* GraphView.h */,
 				53EECF2C17836AD0009DA96A /* GraphView.m */,
+				14A89FE21A6B861B0017C301 /* iPhone.storyboard */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -192,8 +205,7 @@
 				53EECF1A17836AAF009DA96A /* Default.png in Resources */,
 				53EECF1B17836AAF009DA96A /* Default@2x.png in Resources */,
 				53EECF2217836AB9009DA96A /* Localizable.strings in Resources */,
-				53EECF2317836AB9009DA96A /* MainViewController.xib in Resources */,
-				53EECF2417836AB9009DA96A /* MainWindow.xib in Resources */,
+				14A89FE31A6B861B0017C301 /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,22 +235,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		53EECF1E17836AB9009DA96A /* MainViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				53EECF1F17836AB9009DA96A /* en */,
-			);
-			name = MainViewController.xib;
-			sourceTree = "<group>";
-		};
-		53EECF2017836AB9009DA96A /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				53EECF2117836AB9009DA96A /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -249,11 +245,16 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AccelerometerGraph/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/AccelerometerGraph/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = AccelerometerGraph;
 				SDKROOT = iphoneos;
 				WARNING_CFLAGS = "-Wall";
@@ -267,9 +268,14 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AccelerometerGraph/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/AccelerometerGraph/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				PRODUCT_NAME = AccelerometerGraph;
 				SDKROOT = iphoneos;
 				WARNING_CFLAGS = "-Wall";
@@ -286,6 +292,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -299,6 +306,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

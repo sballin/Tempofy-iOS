@@ -46,7 +46,10 @@
 */
 
 #import <UIKit/UIKit.h>
+#import <Spotify/Spotify.h>
 
-@interface MainViewController : UIViewController <UIAccelerometerDelegate>
+@interface MainViewController : UIViewController<UIAccelerometerDelegate, SPTAudioStreamingDelegate, SPTAudioStreamingPlaybackDelegate>
+
+-(void)handleNewSession:(SPTSession *)session;
 
 @end

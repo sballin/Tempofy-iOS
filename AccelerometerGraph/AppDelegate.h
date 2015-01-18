@@ -45,7 +45,7 @@ Copyright (C) 2013 Apple Inc. All Rights Reserved.
 
 */
 
-@interface AppDelegate : NSObject<UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
 

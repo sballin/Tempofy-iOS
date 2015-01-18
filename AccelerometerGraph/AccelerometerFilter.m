@@ -85,7 +85,7 @@ double Norm(double x, double y, double z)
     return _accelsZ;
 }
 
-- (void)addAcceleration:(UIAcceleration *)accel
+- (void)addAcceleration:(CMAcceleration)accel
 {
 	x = accel.x;
 	y = accel.y;
