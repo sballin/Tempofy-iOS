@@ -52,6 +52,7 @@
 {
 	BOOL adaptive;
 	UIAccelerationValue x, y, z;
+    double _small_set[256];
 }
 
 // Add a UIAcceleration to the filter.
@@ -60,22 +61,13 @@
 @property (nonatomic, readonly) UIAccelerationValue x;
 @property (nonatomic, readonly) UIAccelerationValue y;
 @property (nonatomic, readonly) UIAccelerationValue z;
+@property (nonatomic, readonly) double *small_set;
+@property (nonatomic, strong) NSMutableArray *accelsX;
+@property (nonatomic, strong) NSMutableArray *accelsY;
+@property (nonatomic, strong) NSMutableArray *accelsZ;
 
 @property (nonatomic, getter=isAdaptive) BOOL adaptive;
 @property (unsafe_unretained, nonatomic, readonly) NSString *name;
-
-@end
-
-#pragma mark -
-
-// A filter class to represent a lowpass filter
-@interface LowpassFilter : AccelerometerFilter
-{
-	double filterConstant;
-	UIAccelerationValue lastX, lastY, lastZ;
-}
-
-- (id)initWithSampleRate:(double)rate cutoffFrequency:(double)freq;
 
 @end
 

@@ -80,7 +80,7 @@ CGColorRef graphBackgroundColor()
 	static CGColorRef c = NULL;
 	if (c == NULL)
 	{
-		c = CreateDeviceGrayColor(0.9, 1.0);
+		c = CreateDeviceGrayColor(1.0, 1.0);
 	}
 	return c;
 }
@@ -90,7 +90,7 @@ CGColorRef graphLineColor()
 	static CGColorRef c = NULL;
 	if (c == NULL)
 	{
-		c = CreateDeviceGrayColor(0.5, 1.0);
+		c = CreateDeviceGrayColor(0.9, 1.0);
 	}
 	return c;
 }
@@ -326,7 +326,7 @@ void DrawGridlines(CGContextRef context, CGFloat x, CGFloat width)
 
 	// Draw the text
 	UIFont *systemFont = [UIFont systemFontOfSize:12.0];
-	[[UIColor grayColor] set];
+	[[UIColor lightGrayColor] set];
 	[@"+3.0" drawInRect:CGRectMake(2.0, -56.0, 24.0, 16.0) withFont:systemFont lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentRight];
 	[@"+2.0" drawInRect:CGRectMake(2.0, -40.0, 24.0, 16.0) withFont:systemFont lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentRight];
 	[@"+1.0" drawInRect:CGRectMake(2.0, -24.0, 24.0, 16.0) withFont:systemFont lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentRight];

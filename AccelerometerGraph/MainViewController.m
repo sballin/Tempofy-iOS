@@ -55,28 +55,38 @@
 
 @interface MainViewController()
 {
-	AccelerometerFilter *filter;
 	BOOL isPaused, useAdaptive;
 }
 
 @property (nonatomic, strong) IBOutlet GraphView *unfiltered;
-@property (nonatomic, strong) IBOutlet GraphView *filtered;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *pause;
-@property (nonatomic, strong) IBOutlet UILabel *filterLabel;
+@property (nonatomic, strong) AccelerometerFilter *filter;
+@property (nonatomic) int count;
 
 - (IBAction)pauseOrResume:(id)sender;
-- (IBAction)filterSelect:(id)sender;
-- (IBAction)adaptiveSelect:(id)sender;
 
 // Sets up a new filter. Since the filter's class matters and not a particular instance
 // we just pass in the class and -changeFilter: will setup the proper filter.
 - (void)changeFilter:(Class)filterClass;
+- (void)sendAccelData;
 
 @end
 
 @implementation MainViewController
 
-@synthesize unfiltered, filtered, pause, filterLabel;
+@synthesize unfiltered, pause;
+@synthesize filter = _filter;
+@synthesize count = _count;
+
+- (AccelerometerFilter *)filter {
+    if (!_filter) _filter = [[AccelerometerFilter alloc] init];
+    return _filter;
+}
+
+- (int)count {
+    if (!_count) _count = 0;
+    return _count;
+}
 
 // Implement viewDidLoad to do additional setup after loading the view.
 - (void)viewDidLoad
@@ -86,15 +96,11 @@
 	pause.possibleTitles = [NSSet setWithObjects:kLocalizedPause, kLocalizedResume, nil];
 	isPaused = NO;
 	useAdaptive = NO;
-	[self changeFilter:[LowpassFilter class]];
 	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0 / kUpdateFrequency];
 	[[UIAccelerometer sharedAccelerometer] setDelegate:self];
 	
 	[unfiltered setIsAccessibilityElement:YES];
 	[unfiltered setAccessibilityLabel:NSLocalizedString(@"unfilteredGraph", @"")];
-
-	[filtered setIsAccessibilityElement:YES];
-	[filtered setAccessibilityLabel:NSLocalizedString(@"filteredGraph", @"")];
 }
 
 // UIAccelerometerDelegate method, called when the device accelerates.
@@ -103,24 +109,38 @@
 	// Update the accelerometer graph view
 	if (!isPaused)
 	{
-		[filter addAcceleration:acceleration];
+		[self.filter addAcceleration:acceleration];
+        if (++self.count % 512 == 0)
+            [self sendAccelData];
 		[unfiltered addX:acceleration.x y:acceleration.y z:acceleration.z];
-		[filtered addX:filter.x y:filter.y z:filter.z];
 	}
 }
 
-- (void)changeFilter:(Class)filterClass
+- (void)sendAccelData
 {
-	// Ensure that the new filter class is different from the current one...
-	if (filterClass != [filter class])
-	{
-		// And if it is, release the old one and create a new one.
-		filter = [[filterClass alloc] initWithSampleRate:kUpdateFrequency cutoffFrequency:5.0];
-		// Set the adaptive flag
-		filter.adaptive = useAdaptive;
-		// And update the filterLabel with the new filter name.
-		filterLabel.text = filter.name;
-	}
+    NSURL *url = [NSURL URLWithString:@"http://dev.kovits.com:5000"];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    NSDictionary *dictionary = @{@"x": self.filter.accelsX,
+                                 @"y": self.filter.accelsY,
+                                 @"z": self.filter.accelsZ};
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dictionary
+                                                   options:kNilOptions error:&error];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setValue:[NSString stringWithFormat:@"%d", data.length] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    request.HTTPMethod = @"POST";
+    
+    if (!error) {
+        NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request
+                                              fromData:data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                              // Handle response
+                                              NSData *received = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                                              NSLog(@"%@", received);}];
+        [uploadTask resume];
+    }
 }
 
 - (IBAction)pauseOrResume:(id)sender
@@ -139,35 +159,6 @@
 	}
 	
 	// Inform accessibility clients that the pause/resume button has changed.
-	UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
-}
-
-- (IBAction)filterSelect:(id)sender
-{
-	if ([sender selectedSegmentIndex] == 0)
-	{
-		// Index 0 of the segment selects the lowpass filter
-		[self changeFilter:[LowpassFilter class]];
-	}
-	else
-	{
-		// Index 1 of the segment selects the highpass filter
-		[self changeFilter:[HighpassFilter class]];
-	}
-
-	// Inform accessibility clients that the filter has changed.
-	UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
-}
-
-- (IBAction)adaptiveSelect:(id)sender
-{
-	// Index 1 is to use the adaptive filter, so if selected then set useAdaptive appropriately
-	useAdaptive = [sender selectedSegmentIndex] == 1;
-	// and update our filter and filterLabel
-	filter.adaptive = useAdaptive;
-	filterLabel.text = filter.name;
-	
-	// Inform accessibility clients that the adaptive selection has changed.
 	UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
 }
 

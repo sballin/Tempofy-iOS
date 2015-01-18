@@ -69,7 +69,7 @@
 						<string key="NSFrame">{{0, 49}, {320, 112}}</string>
 						<reference key="NSSuperview" ref="245598487"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="97412129"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC44NTA4MzkxMjA0AA</bytes>
@@ -80,7 +80,7 @@
 					<object class="IBUILabel" id="634276563">
 						<reference key="NSNextResponder" ref="245598487"/>
 						<int key="NSvFlags">288</int>
-						<string key="NSFrame">{{20, 20}, {280, 21}}</string>
+						<string key="NSFrame">{{27, 25}, {266, 21}}</string>
 						<reference key="NSSuperview" ref="245598487"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="927728037"/>
@@ -88,10 +88,10 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Accelerometer Data</string>
+						<string key="IBUIText">Accelerometer</string>
 						<object class="NSColor" key="IBUITextColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MC42ODUxMjczMTQ4AA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -267,40 +267,22 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">MainViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="adaptiveSelect:">id</string>
-						<string key="filterSelect:">id</string>
-						<string key="pauseOrResume:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="adaptiveSelect:">
-							<string key="name">adaptiveSelect:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="filterSelect:">
-							<string key="name">filterSelect:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="pauseOrResume:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">pauseOrResume:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">pauseOrResume:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">pauseOrResume:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</dictionary>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="filterLabel">UILabel</string>
-						<string key="filtered">GraphView</string>
 						<string key="pause">UIBarButtonItem</string>
 						<string key="unfiltered">GraphView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="filterLabel">
-							<string key="name">filterLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="filtered">
-							<string key="name">filtered</string>
-							<string key="candidateClassName">GraphView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="pause">
 							<string key="name">pause</string>
 							<string key="candidateClassName">UIBarButtonItem</string>
