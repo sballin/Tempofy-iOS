@@ -36,7 +36,7 @@
 		14A89FE41A6B8E7D0017C301 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* AccelerometerGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccelerometerGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Tempofy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tempofy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		53EECF1617836AAF009DA96A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "AccelerometerGraph/images/Default-568h@2x.png"; sourceTree = "<group>"; };
 		53EECF1717836AAF009DA96A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = AccelerometerGraph/images/Default.png; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* AccelerometerGraph.app */,
+				1D6058910D05DD3D006BFB54 /* Tempofy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* AccelerometerGraph */ = {
+		1D6058900D05DD3D006BFB54 /* Tempofy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "AccelerometerGraph" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Tempofy" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -163,9 +163,9 @@
 			);
 			dependencies = (
 			);
-			name = AccelerometerGraph;
+			name = Tempofy;
 			productName = AccelerometerGraph;
-			productReference = 1D6058910D05DD3D006BFB54 /* AccelerometerGraph.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Tempofy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -176,7 +176,7 @@
 			attributes = {
 				LastUpgradeCheck = 0610;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AccelerometerGraph" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Tempofy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -191,7 +191,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* AccelerometerGraph */,
+				1D6058900D05DD3D006BFB54 /* Tempofy */,
 			);
 		};
 /* End PBXProject section */
@@ -255,7 +255,7 @@
 				GCC_PREFIX_HEADER = AccelerometerGraph/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/AccelerometerGraph/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				PRODUCT_NAME = AccelerometerGraph;
+				PRODUCT_NAME = Tempofy;
 				SDKROOT = iphoneos;
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -276,7 +276,7 @@
 				GCC_PREFIX_HEADER = AccelerometerGraph/Prefix.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/AccelerometerGraph/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				PRODUCT_NAME = AccelerometerGraph;
+				PRODUCT_NAME = Tempofy;
 				SDKROOT = iphoneos;
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -314,7 +314,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "AccelerometerGraph" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Tempofy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -323,7 +323,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "AccelerometerGraph" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Tempofy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

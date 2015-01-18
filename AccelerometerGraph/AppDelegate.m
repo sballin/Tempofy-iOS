@@ -51,7 +51,6 @@
 #import <Spotify/Spotify.h>
 
 @interface AppDelegate ()
-@property (nonatomic, strong) IBOutlet UIViewController *viewController;
 @end
 
 #define kSessionUserDefaultsKey "SpotifySession"
@@ -101,7 +100,7 @@
     
     [auth renewSession:session withServiceEndpointAtURL:[NSURL URLWithString:@kTokenRefreshServiceURL] callback:^(NSError *error, SPTSession *session) {
         if (error) {
-            NSLog(@"*** Error renewing session: %@", error);
+            NSLog(@"Error renewing session: %@", error);
             return;
         }
         

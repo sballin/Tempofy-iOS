@@ -179,13 +179,10 @@
     }
     
     [self.player loginWithSession:session callback:^(NSError *error) {
-        
         if (error != nil) {
             NSLog(@"*** Enabling playback got error: %@", error);
             return;
         }
-        
-        [self playTrack:session:@"1f8hry0XqvlplWGFNr9NNE"];
     }];
 }
 
@@ -277,11 +274,12 @@
     request.HTTPMethod = @"POST";
     
     if (!error) {
-        NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request
-                                              fromData:data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                              // Handle response
-                                              NSData *received = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-                                              NSLog(@"%@", received);}];
+        NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request fromData:data completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                // Handle response
+                NSDictionary *received = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+                if (received[@"song_id"])
+                    [self playTrack:self.session :received[@"song_id"]];
+                NSLog(@"%@", received[@"song_id"]);}];
         [uploadTask resume];
     }
 }
