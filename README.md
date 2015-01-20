@@ -5,6 +5,12 @@ Tempofy
 
 Use data from your iPhone's accelerometer to queue up a song on Spotify that matches the rhythm of your jogging/dancing/underwater basket weaving.
 
+To do
+-----
+
+- Demo mode with 30-second clips that doesn't require Spotify Premium
+- BPM calculation and matching on device (currently requires backend server)
+
 Resources
 ---------
 
